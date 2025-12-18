@@ -3,14 +3,14 @@
 ====================== */
 .weather {
   place-self: center;
-  padding: 42px 38px;
+  padding: 35px 38px;
   border-radius: 22px;
   background: linear-gradient(135deg, #4f6bff, #6d89ff, #3a9dfc);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 360px;
+  width: 450px;
   animation: cardFade 0.8s ease;
   position: relative;
   overflow: hidden;
