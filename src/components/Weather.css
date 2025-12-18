@@ -3,14 +3,14 @@
 ====================== */
 .weather {
   place-self: center;
-  padding: 35px 38px;
-  border-radius: 22px;
+  padding: 28px 34px;            /* ⬇ reduced */
+  border-radius: 20px;
   background: linear-gradient(135deg, #4f6bff, #6d89ff, #3a9dfc);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 450px;
+  width: 420px;                  /* ⬇ slightly reduced */
   animation: cardFade 0.8s ease;
   position: relative;
   overflow: hidden;
@@ -21,7 +21,7 @@
   content: "";
   position: absolute;
   inset: -50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 60%);
+  background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 60%);
   animation: glowMove 8s linear infinite;
 }
 
@@ -31,49 +31,36 @@
 .search-bar {
   width: 100%;
   display: flex;
-  gap: 12px;
+  gap: 10px;
   z-index: 1;
 }
 
 .search-bar input {
   flex: 1;
-  padding: 14px 22px;
-  border: none;
+  padding: 12px 20px;            /* ⬇ */
   border-radius: 50px;
-  font-size: 16px;
+  font-size: 15px;
+  border: none;
   outline: none;
   background: rgba(255, 255, 255, 0.95);
-  color: #333;
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
-}
-
-.search-bar input:focus {
-  box-shadow: 0 0 0 4px rgba(79, 107, 255, 0.35);
-  transform: translateY(-1px);
 }
 
 .search-bar img {
-  width: 50px;
-  height: 50px;
-  padding: 13px;
+  width: 46px;                   /* ⬇ */
+  height: 46px;
+  padding: 12px;
   border-radius: 50%;
   background: #ffffff;
   cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.search-bar img:hover {
-  background: #eef3ff;
-  transform: rotate(8deg) scale(1.1);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: 0.3s ease;
 }
 
 /* ======================
    WEATHER ICON
 ====================== */
 .weather-icon {
-  width: 170px;
-  margin: 26px 0 16px;
+  width: 140px;                  /* ⬇ reduced */
+  margin: 20px 0 12px;           /* ⬇ */
   animation: floatIcon 3s ease-in-out infinite;
   z-index: 1;
 }
@@ -82,21 +69,18 @@
    TEMPERATURE & LOCATION
 ====================== */
 .temperature {
-  font-size: 82px;
+  font-size: 68px;               /* ⬇ */
   font-weight: 700;
   line-height: 1;
   color: #ffffff;
-  text-shadow: 0 8px 20px rgba(0,0,0,0.35);
-  animation: scaleIn 0.6s ease;
+  text-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
 
 .location {
-  font-size: 28px;
-  font-weight: 500;
+  font-size: 24px;               /* ⬇ */
   color: #f1f4ff;
-  margin-bottom: 28px;
+  margin-bottom: 18px;           /* ⬇ */
   opacity: 0.95;
-  animation: fadeUp 0.6s ease;
 }
 
 /* ======================
@@ -105,42 +89,35 @@
 .weather-data {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  gap: 16px;
+  gap: 14px;
   z-index: 1;
 }
 
 .weather-data .col {
   flex: 1;
+  padding: 12px 14px;            /* ⬇ */
+  border-radius: 14px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 14px 16px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   color: #ffffff;
-  transition: transform 0.25s ease, background 0.25s ease;
-}
-
-.weather-data .col:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.25);
 }
 
 .weather-data .col img {
-  width: 28px;
+  width: 24px;                   /* ⬇ */
 }
 
 .weather-data .col p {
-  font-size: 22px;
+  font-size: 20px;               /* ⬇ */
   font-weight: 600;
   margin: 0;
 }
 
 .weather-data .col span {
-  font-size: 14px;
-  opacity: 0.9;
+  font-size: 13px;
+  opacity: 0.85;
 }
 
 /* ======================
@@ -148,17 +125,7 @@
 ====================== */
 @keyframes floatIcon {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes scaleIn {
-  from { transform: scale(0.85); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-@keyframes fadeUp {
-  from { transform: translateY(10px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-8px); }
 }
 
 @keyframes cardFade {
@@ -177,15 +144,23 @@
 @media (max-width: 480px) {
   .weather {
     width: 100%;
-    padding: 34px 24px;
-    border-radius: 18px;
+    padding: 26px 22px;
+    border-radius: 16px;
+  }
+
+  .weather-icon {
+    width: 120px;
   }
 
   .temperature {
-    font-size: 64px;
+    font-size: 58px;
   }
 
   .location {
-    font-size: 22px;
+    font-size: 20px;
+  }
+
+  .weather-data {
+    flex-direction: column;
   }
 }
